@@ -84,7 +84,8 @@ table thead tr th {
 }
 
 table tbody tr td {
-  color: rgb(191, 191, 191);
+  color: #fffe00;
+  font-size: 18px;
 }
 
 table tbody tr .completed {
@@ -92,7 +93,13 @@ table tbody tr .completed {
   text-decoration-color: #ff0000;
   text-decoration-thickness: 5px;
 }
-
+table tbody tr .form-check-input {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
 div .counter {
   width: 15%;
 }
@@ -128,4 +135,21 @@ div .counter tbody .notDone {
   background-color: #fc0000;
   padding: 5px 0 1px 15px;
   border-radius: 10px;
+}
+/* ======================================= */
+@media (max-width: 576px) {
+  .title p {
+    width: 100%;
+    margin-left: 10px;
+    font-size: 25px;
+  }
+  .d-flex {
+    flex-wrap: wrap !important;
+  }
+  .d-flex .table {
+    width: 100% !important;
+  }
+  div .counter {
+    width: 100%;
+  }
 }
