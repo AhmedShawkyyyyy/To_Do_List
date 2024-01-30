@@ -100,23 +100,9 @@ table tbody tr .form-check-input {
   align-items: center;
   text-align: center;
 }
-div .counter {
-  width: 15%;
-}
 
 div .counter {
   width: 15%;
-}
-div .counter thead {
-  background-color: #05419a;
-}
-
-div .counter tbody .done {
-  background-color: #1a511d;
-}
-
-div .counter tbody .notDone {
-  background-color: #eb3737;
 }
 
 .counter h5:nth-child(1) {
