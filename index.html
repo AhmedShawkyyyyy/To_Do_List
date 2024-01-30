@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <!-- ICON -->
-    <link rel="icon" type="image/png" href="./Vendors/img/vecteezy_check-mark-icon-sign-symbol-design_10142101.png">
+    <link rel="icon" type="image/png" href="/Assets/img/vecteezy_check-mark-icon-sign-symbol-design_10142101.png">
     <!-- CSS -->
-    <link rel="stylesheet" href="./Assets/CSS/master.css">
+    <link rel=" stylesheet" href="./Assets/CSS/master.css">
     <link rel="stylesheet" href="./Assets/CSS/bootstrap.min.css">
     <!-- FONT AWOSOME -->
     <link rel="stylesheet" href="./Vendors/fontawesome-free-6.4.2-web/css/all.css">
@@ -36,8 +36,8 @@
         class="section-1 col-md-8 col-sm-6  ms-5 me-5 d-flex flex-wrap-wrap justify-content-center align-items-center      ">
         <div class="input-group g-row-6">
             <span class="input-group-text mb-2 " id="basic-addon1"><i class="fa-solid fa-pen"></i></span>
-            <input type="text" class="form-control mb-2 me-2 rounded-1 " placeholder="Username" aria-label="Username"
-                aria-describedby="basic-addon1">
+            <input type="text" class="form-control mb-2 me-2 rounded-1 " placeholder="Write your task here"
+                aria-label="Username" aria-describedby="basic-addon1">
             <input type="datetime-local" name="datetime-local " id="datetime-local"
                 class="slctDate rounded-2 mb-2 me-2 p-2 ">
             <button onclick="AddTask()" type="button" class="btn btn-outline-success add" id="add">Add</button>
@@ -62,15 +62,32 @@
         <div class="counter ms-5 col-sm-12  p-2">
             <h5>Total Tasks<p id="total"></p>
             </h5>
-
             <h5>Completed Tasks<p id="checked"></p>
             </h5>
-
             <h5>Not-Completed Tasks <p id="unChecked"></p>
             </h5>
-
         </div>
     </div>
+    <div id="overlay"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5);">
+    </div>
+    <div class="warning" id="warning">
+        <div class="rings d-flex flex-wrap-wrap justify-content-start align-items-center">
+            <div class="child1"></div>
+            <div class="child2"></div>
+            <div class="child3"></div>
+            <div class="child4"></div>
+            <div class="child5"></div>
+            <div class="escape"><i class="fa-regular fa-circle-xmark"></i></div>
+        </div>
+        <div class="writes mt-3">
+            <h5>Warning: Kindly recheck the following :</h5>
+            <p> # you wrote the task.</p>
+            <p># you choose the date</p>
+            <h5 class="dont align-items-center">and don`t forget to mark as done once you finish it</h5>
+        </div>
+    </div>
+
 </body>
 
 <script src="./Assets/JS/master.js"></script>

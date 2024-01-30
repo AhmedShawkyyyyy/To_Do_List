@@ -35,16 +35,38 @@ function AddTask() {
     localStorage.setItem("tasks", JSON.stringify(tasksArr));
     printTask();
     ClearInputs();
+
     // updateCounters();
+    // ==============updatecounter function=============//
     totalCounter.textContent = `${totalTasks}`;
     checkedCounter.textContent = ` ${checkedTasks}`;
     uncheckedCounter.textContent = ` ${uncheckedTasks}`;
     console.log(tasksArr);
   } else {
-    alert("please add Task");
+    //===============alert function ====================//
+    const alertBox = document.querySelector(".warning");
+    const body = document.body - alertBox;
+    const overlay = document.getElementById("overlay");
+    console.log(overlay);
+    console.log(body);
+    alertBox.style.display = "block";
+    overlay.style.display = "block";
+    alertBox.style.opacity = 1;
+
+    const disabledElements = [siInputs, siDate];
+    for (const element of disabledElements) {
+      element.disabled = true;
+    }
+    overlay.style.opacity = 0.7;
+    alertBox.addEventListener("click", () => {
+      for (const element of disabledElements) {
+        element.disabled = false;
+      }
+      overlay.style.display = "none";
+      alertBox.style.display = "none";
+    });
   }
 }
-
 // Read Function///
 function printTask() {
   showTasks.innerHTML = "";
@@ -76,10 +98,9 @@ function printTask() {
 
   checkbox.forEach((checkbox) => {
     checkbox.addEventListener("change", () => {
-      let taskRow = checkbox.closest("tr"); // Get the task row
-      let taskIndex = taskRow.rowIndex - 1; // Calculate task index (adjust based on header rows)
+      let taskRow = checkbox.closest("tr");
+      let taskIndex = taskRow.rowIndex - 1;
 
-      // Target specific task and date elements:
       let taskElement = taskData[taskIndex];
       let dateElement = taskDate[taskIndex];
 
@@ -167,7 +188,27 @@ function updateTask(index) {
     ClearInputs();
     updateCounters();
   } else {
-    alert("please update Task");
+    const alertBox = document.querySelector(".warning");
+    const body = document.body - alertBox;
+    const overlay = document.getElementById("overlay");
+    console.log(overlay);
+    console.log(body);
+    alertBox.style.display = "block";
+    overlay.style.display = "block";
+    alertBox.style.opacity = 1;
+
+    const disabledElements = [siInputs, siDate];
+    for (const element of disabledElements) {
+      element.disabled = true;
+    }
+    overlay.style.opacity = 0.7;
+    alertBox.addEventListener("click", () => {
+      for (const element of disabledElements) {
+        element.disabled = false;
+      }
+      overlay.style.display = "none";
+      alertBox.style.display = "none";
+    });
   }
 }
 
@@ -185,7 +226,7 @@ function ClearInputs() {
     siInputs[i].value = "";
   }
   for (let d = 0; d < siDate.length; d++) {
-    siDate[d].value == "";
+    siDate[d].value = "";
   }
 }
 // updateCounters();
