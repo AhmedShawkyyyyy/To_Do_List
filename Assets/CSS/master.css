@@ -1,0 +1,131 @@
+/* 
+fot h2 in title => font-family: 'Sirin Stencil', sans-serif;
+ for p in title => font-family: 'Estonia', cursive;
+
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url(/Vendors/img/bg.img-2.jpg);
+  background-size: cover;
+  color: #261617;
+}
+
+.title h2 {
+  font-family: "Sirin Stencil", sans-serif;
+  margin-top: 30px;
+  margin-left: 50px;
+  font-size: 45px;
+  text-shadow: -25px -37px 3px rgba(0, 0, 0, 0.41);
+}
+.title h2 i {
+  color: #48971d;
+}
+
+.title p {
+  font-family: "Estonia", cursive;
+  margin-top: 30px;
+  margin-left: 90px;
+  font-size: 45px;
+  font-weight: bold;
+  color: #ce1100;
+}
+
+.section-1 .input-group .form-control {
+  border: none;
+  outline: none;
+  overflow: hidden;
+}
+.section-1 .input-group .form-control:focus {
+  box-shadow: 0 0 0 0.15rem #ff6302;
+}
+
+.section-1 .input-group .slctDate {
+  background: #f0a500 url(/Vendors/img/calender-3.png);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 85%;
+  background-blend-mode: revert;
+  font-family: "Sirin Stencil";
+  border: none;
+  outline: none;
+}
+.section-1 .input-group .btn {
+  color: beige;
+  border: none;
+  background-color: #539d56;
+}
+
+.section-1 .input-group .update {
+  background-color: #0b5ed7;
+  border-radius: 10px;
+}
+.section-1 .input-group .update:hover {
+  background-color: #05419a;
+}
+.section-1 .input-group .btn:hover {
+  background-color: #295a2b;
+  outline: #f0a500;
+}
+
+table {
+  background-color: #33333379;
+}
+
+table thead tr th {
+  color: rgb(255, 250, 195);
+}
+
+table tbody tr td {
+  color: rgb(191, 191, 191);
+}
+
+table tbody tr .completed {
+  text-decoration: line-through;
+  text-decoration-color: #ff0000;
+  text-decoration-thickness: 5px;
+}
+
+div .counter {
+  width: 15%;
+}
+
+div .counter {
+  width: 15%;
+}
+div .counter thead {
+  background-color: #05419a;
+}
+
+div .counter tbody .done {
+  background-color: #1a511d;
+}
+
+div .counter tbody .notDone {
+  background-color: #eb3737;
+}
+
+.counter h5:nth-child(1) {
+  background-color: #0b5ed7;
+  padding: 5px 0 1px 15px;
+  border-radius: 10px;
+}
+
+.counter h5:nth-child(2) {
+  background-color: #00993d;
+  padding: 5px 0 1px 15px;
+  border-radius: 10px;
+}
+
+.counter h5:nth-child(3) {
+  background-color: #fc0000;
+  padding: 5px 0 1px 15px;
+  border-radius: 10px;
+}
