@@ -35,7 +35,7 @@ function AddTask() {
     localStorage.setItem("tasks", JSON.stringify(tasksArr));
     printTask();
     ClearInputs();
-    updateCounters();
+    // updateCounters();
     totalCounter.textContent = `${totalTasks}`;
     checkedCounter.textContent = ` ${checkedTasks}`;
     uncheckedCounter.textContent = ` ${uncheckedTasks}`;
@@ -188,6 +188,5 @@ function ClearInputs() {
     siDate[d].value == "";
   }
 }
+// updateCounters();
 printTask();
-
-updateCounters();
