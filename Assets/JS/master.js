@@ -3,12 +3,12 @@ let siDate = document.querySelectorAll("#datetime-local ");
 let btnAdd = document.querySelectorAll(".add");
 let showTasks = document.querySelector("table tbody");
 let tasksArr = JSON.parse(localStorage.getItem("tasks")) || [];
-console.log(siInputs);
-console.log(siDate);
-console.log(btnAdd);
-console.log(showTasks);
-console.log(tasksArr);
-document.querySelectorAll("button");
+// console.log(siInputs);
+// console.log(siDate);
+// console.log(btnAdd);
+// console.log(showTasks);
+// console.log(tasksArr);
+// document.querySelectorAll("button");
 
 // CRUD////////
 
@@ -38,17 +38,17 @@ function AddTask() {
 
     // updateCounters();
     // ==============updatecounter function=============//
-    totalCounter.textContent = `${totalTasks}`;
-    checkedCounter.textContent = ` ${checkedTasks}`;
-    uncheckedCounter.textContent = ` ${uncheckedTasks}`;
-    console.log(tasksArr);
+    // totalCounter.textContent = `${totalTasks}`;
+    // checkedCounter.textContent = ` ${checkedTasks}`;
+    // uncheckedCounter.textContent = ` ${uncheckedTasks}`;
+    // console.log(tasksArr);
   } else {
     //===============alert function ====================//
     const alertBox = document.querySelector(".warning");
     const body = document.body - alertBox;
     const overlay = document.getElementById("overlay");
-    console.log(overlay);
-    console.log(body);
+    // console.log(overlay);
+    // console.log(body);
     alertBox.style.display = "block";
     overlay.style.display = "block";
     alertBox.style.opacity = 1;
@@ -77,11 +77,10 @@ function printTask() {
                 <th scope="row">${index + 1}</th>
                 <td class="unCompleted" id="data">${element.task}</td>
                 <td class="unCompleted" id="date">${element.date}</td>
-                <td><button onclick="editTask(${index})"class="btn btn-primary">Update</button></td>
+                <td><button onclick="editTask(${index})" class="btn btn-primary">Update</button></td>
                 <td><input  class="form-check-input  mt-0" type="checkbox" value=""
                         aria-label="Checkbox for following text input"></td>
                 <td><button onclick="deleteTask(${index})" type="button" class="btn btn-warning">Delete</button></td>
-                   
                 </tr>
       </tbody>
     `;
@@ -92,9 +91,9 @@ function printTask() {
   let taskData = document.querySelectorAll("#data");
   let taskDate = document.querySelectorAll("#date");
   let isChecked = checkbox.checked;
-  console.log(checkbox);
-  console.log(taskData);
-  console.log(taskDate);
+  // console.log(checkbox);
+  // console.log(taskData);
+  // console.log(taskDate);
 
   checkbox.forEach((checkbox) => {
     checkbox.addEventListener("change", () => {
@@ -118,12 +117,12 @@ function printTask() {
     let checkedCounter = document.querySelector("#checked");
     let uncheckedCounter = document.querySelector("#unChecked");
 
-    console.log(totalCounter);
-    console.log(checkedCounter);
-    console.log(uncheckedCounter);
+    // console.log(totalCounter);
+    // console.log(checkedCounter);
+    // console.log(uncheckedCounter);
 
     const totalTasks = document.querySelectorAll("table tbody tr").length;
-    console.log(totalTasks);
+    // console.log(totalTasks);
     let checkedTasks = 0;
     let uncheckedTasks = 0;
 
@@ -136,9 +135,9 @@ function printTask() {
           uncheckedTasks++;
         }
       });
-    console.log("Total tasks:", totalTasks);
-    console.log("Checked tasks:", checkedTasks);
-    console.log("Unchecked tasks:", uncheckedTasks);
+    // console.log("Total tasks:", totalTasks);
+    // console.log("Checked tasks:", checkedTasks);
+    // console.log("Unchecked tasks:", uncheckedTasks);
 
     totalCounter.textContent = `${totalTasks}`;
     checkedCounter.textContent = ` ${checkedTasks}`;
@@ -181,18 +180,17 @@ function updateTask(index) {
     };
     tasksArr[index] = task;
     localStorage.setItem("tasks", JSON.stringify(tasksArr));
+    ClearInputs();
+    printTask();
     btnAdd[0].innerHTML = "Add";
     btnAdd[0].classList.replace("update", "add");
-    btnAdd[0].setAttribute("onclick", `addTask(${index})`);
-    printTask();
-    ClearInputs();
-    updateCounters();
+    btnAdd[0].setAttribute("onclick", `AddTask(${index})`);
   } else {
     const alertBox = document.querySelector(".warning");
     const body = document.body - alertBox;
     const overlay = document.getElementById("overlay");
-    console.log(overlay);
-    console.log(body);
+    // console.log(overlay);
+    // console.log(body);
     alertBox.style.display = "block";
     overlay.style.display = "block";
     alertBox.style.opacity = 1;
